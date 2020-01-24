@@ -26,6 +26,9 @@ class BankAccountTest {
         assertTrue(BankAccount.isEmailValid( "a@b.com"));
         assertFalse( BankAccount.isEmailValid(""));
 
+        //these tests are pationed into two cases. However I think the partion should be by the entry before
+        //the @ sign and for the domain name after. Im not sure about the border cases range in this context.
+
 
         //added tests for false
         //assertFalse( BankAccount.isEmailValid("abc-@mail.com"));
@@ -33,6 +36,8 @@ class BankAccountTest {
         assertTrue( BankAccount.isEmailValid("abc.def@mail.c"));
         assertFalse( BankAccount.isEmailValid("abc.def@mail"));
 
+
+        //these tests are
 
         //added tests for true
         assertTrue(BankAccount.isEmailValid( "abc.def@mail.com"));
