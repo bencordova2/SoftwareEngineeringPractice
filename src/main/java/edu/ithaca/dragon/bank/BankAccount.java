@@ -56,16 +56,16 @@ public class BankAccount {
             return false;
         }
 
-        int count2=0;
-        for(int i=0; i<email.length(); i++){
-            if(email.charAt(i) == ('-') || email.charAt(i) == ('!') ){
-                count2++;
-            }
-        }
-
-        if(count2 != 0){
-            return false;
-        }
+//        int count2=0;
+//        for(int i=0; i<email.length(); i++){
+//            if(email.charAt(i) == ('-')){
+//                count2++;
+//            }
+//        }
+//
+//        if(count2 != 0){
+//            return false;
+//        }
 
         else {
             return true;
