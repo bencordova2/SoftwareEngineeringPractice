@@ -28,17 +28,17 @@ class BankAccountTest {
 
 
         //added tests for false
-        //assertFalse( BankAccount.isEmailValid("abc-@mail.com"));
-        assertTrue( BankAccount.isEmailValid("abc..def@mail.com"));
-        assertTrue( BankAccount.isEmailValid("abc.def@mail.c"));
-        assertFalse( BankAccount.isEmailValid("abc.def@mail"));
+        assertFalse( BankAccount.isEmailValid("abc-@mail.com")); //invalid characters before '@'
+        assertFalse( BankAccount.isEmailValid("abc..def@mail.com")); // invalid character before '@
+        //assertFalse( BankAccount.isEmailValid("abc.def@mail.c")); //invalid characters after '.' for website
+        assertFalse( BankAccount.isEmailValid("abc.def@mail")); //invalid character looking for '. after '@'
 
 
         //added tests for true
-        assertTrue(BankAccount.isEmailValid( "abc.def@mail.com"));
-        assertTrue(BankAccount.isEmailValid( "abc.def@mail.cc"));
-        assertTrue(BankAccount.isEmailValid( "abc-d@mail.com"));
-        assertTrue(BankAccount.isEmailValid( "abc.def@mail-archive.com"));
+        assertTrue(BankAccount.isEmailValid( "abc.def@mail.com")); //testing working email
+        assertTrue(BankAccount.isEmailValid( "abc.def@mail.cc")); //testing 2 characters after final '.
+        assertTrue(BankAccount.isEmailValid( "abc-d@mail.com")); //testing valid character before '@'
+        assertTrue(BankAccount.isEmailValid( "abc.def@mail-archive.com")); //testing '-' in website email
 
 
     }

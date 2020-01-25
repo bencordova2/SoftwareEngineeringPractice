@@ -38,34 +38,73 @@ public class BankAccount {
 
 
     public static boolean isEmailValid(String email) {
-        if (email.indexOf('@') == -1 || email.indexOf('@') ==0) {
+        if (email.indexOf('@') == -1 || email.indexOf('@') == 0) {
             return false;
         }
-        if(email.indexOf('.') == -1){
+        if (email.indexOf('.') == -1) {
             return false;
         }
 
-        int count=0;
+        int count = 0;
 
-        for(int i= email.indexOf('@'); i<email.length(); i++) {
+        for (int i = email.indexOf('@'); i < email.length(); i++) {
             if (email.charAt(i) == ('.')) {
                 count++;
             }
         }
-        if(count != 1){
+        if (count != 1) {
             return false;
         }
 
-//        int count2=0;
-//        for(int i=0; i<email.length(); i++){
-//            if(email.charAt(i) == ('-')){
-//                count2++;
-//            }
-//        }
-//
-//        if(count2 != 0){
-//            return false;
-//        }
+        for (int i = 0; i < email.indexOf('@'); i++) {
+            if (email.charAt(i) == ('.')) {
+                if (email.charAt(i + 1) == ('.')) {
+                    return false;
+                }
+            }
+        }
+
+        int count3 = 0;
+        for (int j = email.indexOf('.'); j < email.length(); j++) {
+            if (email.charAt(j) != (' ')) {
+                count3++;
+            }
+        }
+
+
+        if (count3 <= 1) {
+            return false;
+        }
+
+
+        int count2=0;
+        for(int i=0; i<email.length(); i++){
+            if(email.indexOf('-') ==  email.indexOf('@')-1){
+                count2++;
+            }
+        }
+
+        if(count2 != 0){
+            return false;
+        }
+
+
+        int count4 =0;
+        int indx = email.lastIndexOf('.');
+
+        while(indx < email.length()) {
+            count4++;
+            indx++;
+        }
+        if(count4 <=1){
+            return false;
+        }
+
+
+
+
+
+
 
         else {
             return true;
